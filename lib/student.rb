@@ -18,7 +18,7 @@ class Student
 
   def add_student_attributes(attributes_hash)
     attributes_hash.each do |key, value|
-      studen_hash[key] = value 
+      student_hash[key] = value 
     end 
   end
 
