@@ -21,15 +21,14 @@ class Scraper
     puts attributes.text
     b = {}
     attributes.each do |att|
-      puts att.first['href']
-      if att.first['href'].include?("twitter")
-        b[:twitter] = att.first['href'] 
-      elsif att.first['href'].include?("linkedin")
-        b[:linkedin] = att.first['href'] 
-      elsif att.first['href'].include?("github") 
-        b[:github] = att.first['href']
+      if att['href'].include?("twitter")
+        b[:twitter] = att['href'] 
+      elsif att['href'].include?("linkedin")
+        b[:linkedin] = att['href'] 
+      elsif att['href'].include?("github") 
+        b[:github] = att['href']
       else 
-        b[:blog] = att.first['href']
+        b[:blog] = att['href']
       end 
     end 
     b[:profile_quote] = doc.css('.profile-quote').text
