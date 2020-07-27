@@ -21,7 +21,7 @@ class Scraper
     puts attributes.text
     b = {}
     attributes.each do |att|
-      puts att.first.first['href']
+      puts att.first['href']
       if att.first['href'].include?("twitter")
         b[:twitter] = att.first['href'] 
       elsif att.first['href'].include?("linkedin")
